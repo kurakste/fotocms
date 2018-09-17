@@ -28,7 +28,7 @@ dmstr\web\AdminLteAsset::register($this);
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="<?= Url::to(['carusel/index']) ?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -120,6 +120,7 @@ dmstr\web\AdminLteAsset::register($this);
         <li class="header">MAIN NAVIGATION</li>
         <li><a href="<?= Url::to(['carusel/index']) ?>"><i class="fa fa-recycle"></i> <span>Карусель</span></a></li>
         <li><a href="<?= Url::to(['feedback/index']) ?>"><i class="fa fa-comments"></i> <span>Отзывы</span></a></li>
+        <li><a href="<?= Url::to(['servecies/index']) ?>"><i class="fa fa-bars"></i> <span>Услуги</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->

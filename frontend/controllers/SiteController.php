@@ -31,7 +31,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $carusel = \app\models\Carusel::find()->all();
-        $feedbacks =\app\models\Feedbacks::find()
+        $feedbacks = \app\models\Feedbacks::find()
             ->orderBy(['id'=>'DESC'])
             ->all();
         return $this->render('index', 
@@ -43,7 +43,15 @@ class SiteController extends Controller
 
     public function actionServices()
     {
-        return $this->render('services');
+        $servecies = \app\models\Servecies::find()->all();
+        $feedbacks =\app\models\Feedbacks::find()
+            ->orderBy(['id'=>'DESC'])
+            ->all();
+        return $this->render('services',
+            [
+                'feedbacks' => $feedbacks,
+                'servecies' => $servecies,
+            ]);
     }
 
     public function actionFotosets()
