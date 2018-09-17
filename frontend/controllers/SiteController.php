@@ -31,7 +31,14 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $carusel = \app\models\Carusel::find()->all();
-        return $this->render('index', ['carusel' => $carusel]);
+        $feedbacks =\app\models\Feedbacks::find()
+            ->orderBy(['id'=>'DESC'])
+            ->all();
+        return $this->render('index', 
+            [
+                'carusel' => $carusel,
+                'feedbacks' => $feedbacks,
+            ]);
     }
 
     public function actionServices()

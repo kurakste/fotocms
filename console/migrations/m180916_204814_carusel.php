@@ -13,10 +13,10 @@ class m180916_204814_carusel extends Migration
     {
          $this->createTable('carusel', [
             'id' => Schema::TYPE_PK,
-            'title' => Schema::TYPE_STRING . ' NOT NULL',
-            'alt' => Schema::TYPE_TEXT,
+            'title' => Schema::TYPE_STRING,
+            'alt' => Schema::TYPE_STRING . ' NOT NULL',
             'filename' => Schema::TYPE_STRING . ' NOT NULL',
-            'link' => Schema::TYPE_STRING . ' NOT NULL',
+            'link' => Schema::TYPE_STRING,
         ],
         'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB'
     );

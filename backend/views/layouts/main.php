@@ -119,6 +119,7 @@ dmstr\web\AdminLteAsset::register($this);
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li><a href="<?= Url::to(['carusel/index']) ?>"><i class="fa fa-recycle"></i> <span>Карусель</span></a></li>
+        <li><a href="<?= Url::to(['feedback/index']) ?>"><i class="fa fa-comments"></i> <span>Отзывы</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
