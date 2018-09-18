@@ -8,7 +8,8 @@ class FotosetController extends \yii\web\Controller
     public function actionIndex()
     {
         $id = \Yii::$app->request->get('id');
-        return $this->render('index');
+        $fotoset = \app\models\Alboms::findOne([$id]);
+        return $this->render('index', ['fotoset' => $fotoset]);
     }
 
 }

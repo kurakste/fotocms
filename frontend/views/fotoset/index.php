@@ -1,9 +1,15 @@
 <?php
 /* @var $this yii\web\View */
-?>
-<h1>fotoset/index</h1>
 
-<p>
-    You may change the content of this page by modifying
-    the file <code><?= __FILE__; ?></code>.
-</p>
+    $images = $fotoset->getImagesArray();
+
+?>
+    <br><br>
+    <p><?=$fotoset->description ?></p>
+    <br><br>
+    <?php foreach ($images as $image): ?>
+
+    <img src="<?= $image ?>" alt="" />
+    
+    <?php endforeach ?>
+
