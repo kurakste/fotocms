@@ -56,7 +56,13 @@ class SiteController extends Controller
 
     public function actionFotosets()
     {
-        return $this->render('fotosets');
+        $alboms = \app\models\Alboms::find()->all();
+
+        return $this->render('fotosets',
+            [
+                'alboms' => $alboms,
+            ]
+        );
     }
 
     public function actionContacts()
@@ -68,5 +74,6 @@ class SiteController extends Controller
     {
         return $this->render('blog');
     }
+
 
 }

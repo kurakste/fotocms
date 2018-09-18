@@ -20,6 +20,7 @@ use yii\widgets\ActiveForm;
              ->widget(alexantr\elfinder\InputFile::className(), [
                 'clientRoute' => 'elfinder/input',
                 'class' => 'myclass',
+                'multiple' => false,
             ]);
     ?>
 

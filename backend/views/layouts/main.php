@@ -121,6 +121,7 @@ dmstr\web\AdminLteAsset::register($this);
         <li><a href="<?= Url::to(['carusel/index']) ?>"><i class="fa fa-recycle"></i> <span>Карусель</span></a></li>
         <li><a href="<?= Url::to(['feedback/index']) ?>"><i class="fa fa-comments"></i> <span>Отзывы</span></a></li>
         <li><a href="<?= Url::to(['servecies/index']) ?>"><i class="fa fa-bars"></i> <span>Услуги</span></a></li>
+        <li><a href="<?= Url::to(['alboms/index']) ?>"><i class="fa fa-book"></i> <span>Альбомы</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
