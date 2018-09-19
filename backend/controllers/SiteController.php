@@ -6,6 +6,9 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use yii\web\NotAcceptableHttpException;
+use yii\helpers\Url;
+
 
 /**
  * Site controller
@@ -18,24 +21,12 @@ class SiteController extends Controller
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'actions' => ['login', 'error'],
-                        'allow' => true,
-                    ],
-                    [
-                        'actions' => ['logout', 'index'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
+                    'settings' =>['post' , 'get']
+
                 ],
             ],
         ];
@@ -44,14 +35,14 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
-    public function actions()
-    {
-        return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
-        ];
-    }
+    /* public function actions() */
+    /* { */
+    /*     return [ */
+    /*         'error' => [ */
+    /*             'class' => 'yii\web\ErrorAction', */
+    /*         ], */
+    /*     ]; */
+    /* } */
 
     /**
      * Displays homepage.
@@ -61,6 +52,37 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
+    }
+
+    public function actionSettings()
+    {
+        $webroot = \Yii::getAlias('@webroot');
+        $file =$webroot.'/../../db/store';
+        if (!file_exists($file)) {
+            $site = new \backend\objects\Photosite;
+
+        } else {
+            $site = unserialize(file_get_contents($file));
+        }
+
+        $request = \Yii::$app->request;
+        if ($request->isPost) {
+            $site->phone = $request->post('phone') ?? "";
+            $site->aboutText = $request->post('aboutText') ?? "";
+            $site->contacts = $request->post('contacts') ?? "";
+
+            if ($site->validate()) {
+                 $site->save();
+                 return $this->redirect(Url::to(['site/settings']));
+            } else {
+                throw new NotAcceptableHttpException('Переданы не корректные данные');
+                return;
+            }
+        }
+
+        
+
+        return $this->render('settings', ['site' => $site ]);
     }
 
     /**

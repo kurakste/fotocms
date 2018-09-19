@@ -118,10 +118,12 @@ dmstr\web\AdminLteAsset::register($this);
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
+        <li><a href="<?= Url::to(['site/settings']) ?>"><i class="fa fa-cogs"></i> <span>Настройки сайта</span></a></li>
         <li><a href="<?= Url::to(['carusel/index']) ?>"><i class="fa fa-recycle"></i> <span>Карусель</span></a></li>
         <li><a href="<?= Url::to(['feedback/index']) ?>"><i class="fa fa-comments"></i> <span>Отзывы</span></a></li>
         <li><a href="<?= Url::to(['servecies/index']) ?>"><i class="fa fa-bars"></i> <span>Услуги</span></a></li>
         <li><a href="<?= Url::to(['alboms/index']) ?>"><i class="fa fa-book"></i> <span>Альбомы</span></a></li>
+        <li><a href="<?= Url::to(['posts/index']) ?>"><i class="fa fa-file-text-o"></i> <span>Статьи</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->

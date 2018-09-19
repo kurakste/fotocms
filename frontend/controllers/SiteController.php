@@ -72,7 +72,8 @@ class SiteController extends Controller
 
     public function actionBlog()
     {
-        return $this->render('blog');
+        $posts = \app\models\Posts::find()->all();
+        return $this->render('blog', ['posts' => $posts]);
     }
 
 
