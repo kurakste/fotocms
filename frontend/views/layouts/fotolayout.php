@@ -3,6 +3,8 @@
 use frontend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use \frontend\widgets\Phone;
+use \frontend\widgets\Copyrights;
 
 AppAsset::register($this);
 ?>
@@ -49,7 +51,13 @@ AppAsset::register($this);
             <li><a href="<?= Url::to(['site/fotosets']) ?>">Фотосерии</a></li>
             <li><a href="<?= Url::to(['site/blog']) ?>">Блог</a></li>
             <li><a href="<?= Url::to(['site/contacts']) ?>">Контакты</a></li>
-            <li><a href="tel:+79377378868">+7(937)737-88-68</a></li>
+            <li><a 
+            href="tel: <?= Phone::widget([]); ?>"
+                            >
+                                <?= Phone::widget([]); ?>
+                            </a>
+            </li>
+
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -64,7 +72,9 @@ AppAsset::register($this);
 <!-- Start Footer -->
       <div class="row footer">
           <div class="col-xs-12 container-footer">
-              <p class="text-muted text-center"> &copy Дмитрий Куракин г.Волгоград +7 (937) 737-88-68 </p>
+              <p class="text-muted text-center">
+                <?= Copyrights::widget(); ?>
+            </p>
           </div>
       </div> <!--End row -->
 <!-- End Footer -->

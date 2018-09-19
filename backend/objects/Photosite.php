@@ -9,6 +9,7 @@ class Photosite extends Model
     public $phone;
     public $aboutText;
     public $contacts;
+    public $copyrights;
 
     public function __destruct()
     {

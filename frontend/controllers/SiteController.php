@@ -67,7 +67,12 @@ class SiteController extends Controller
 
     public function actionContacts()
     {
-        return $this->render('contacts');
+        $site = \backend\objects\Getsettings::get();
+        
+        return $this->render('contacts',
+            [
+                'site' => $site,
+            ]);
     }
 
     public function actionBlog()

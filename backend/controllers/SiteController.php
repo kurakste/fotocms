@@ -56,20 +56,14 @@ class SiteController extends Controller
 
     public function actionSettings()
     {
-        $webroot = \Yii::getAlias('@webroot');
-        $file =$webroot.'/../../db/store';
-        if (!file_exists($file)) {
-            $site = new \backend\objects\Photosite;
-
-        } else {
-            $site = unserialize(file_get_contents($file));
-        }
+        $site = \backend\objects\Getsettings::get();
 
         $request = \Yii::$app->request;
         if ($request->isPost) {
             $site->phone = $request->post('phone') ?? "";
             $site->aboutText = $request->post('aboutText') ?? "";
             $site->contacts = $request->post('contacts') ?? "";
+            $site->copyrights = $request->post('copyrights') ?? "";
 
             if ($site->validate()) {
                  $site->save();
