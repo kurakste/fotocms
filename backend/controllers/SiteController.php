@@ -58,19 +58,19 @@ class SiteController extends Controller
     {
         $site = \backend\objects\Getsettings::get();
 
+//        var_dump($site);die;
+
         $request = \Yii::$app->request;
         if ($request->isPost) {
-            $site->phone = $request->post('phone') ?? "";
-            $site->aboutText = $request->post('aboutText') ?? "";
-            $site->contacts = $request->post('contacts') ?? "";
-            $site->copyrights = $request->post('copyrights') ?? "";
+
+            $site->load($request->post('Photosite'), ''); 
 
             if ($site->validate()) {
                  $site->save();
                  return $this->redirect(Url::to(['site/settings']));
             } else {
                 throw new NotAcceptableHttpException('Переданы не корректные данные');
-                return;
+                return false;
             }
         }
 

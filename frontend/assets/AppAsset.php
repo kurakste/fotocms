@@ -16,6 +16,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         '/js/up.js',
+        '/js/parallax.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

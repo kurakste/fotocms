@@ -47,10 +47,14 @@ class SiteController extends Controller
         $feedbacks =\app\models\Feedbacks::find()
             ->orderBy(['id'=>'DESC'])
             ->all();
+        $site = \backend\objects\Getsettings::get();
+
+
         return $this->render('services',
             [
                 'feedbacks' => $feedbacks,
                 'servecies' => $servecies,
+                'site' => $site,
             ]);
     }
 

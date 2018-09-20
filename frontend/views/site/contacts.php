@@ -1,7 +1,12 @@
+<?php
+$this->title = 'Контакты ';
+
+?>
+
 <div class="row">
     <div class="col-md-4">
         <div id="about-img">
-            <img src="/img/Igor_tsaplin.jpg" alt="" />
+            <img src="<?= $site->contacts_photo; ?>" alt="" />
         </div>
         <div class="contacts">
             <?= $site->contacts; ?>

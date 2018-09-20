@@ -5,6 +5,8 @@ $this->registerCssFile('/css/hover/normalize.css');
 $this->registerCssFile('/css/hover/demo.css');
 $this->registerCssFile('/css/hover/set1.css');
 
+$this->title = ' Альбомы ';
+
 ?>
 
 <div class="content">

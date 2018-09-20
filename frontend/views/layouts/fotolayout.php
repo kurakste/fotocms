@@ -1,5 +1,4 @@
 <?php
-
 use frontend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -19,7 +18,7 @@ AppAsset::register($this);
     <?php $this->head() ?>
     <?= Html::csrfMetaTags() ?>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Дмитрий Куракин</title>
+    <title>Свадебный фотограф. Дмитрий Куракин | <?= Html::encode($this->title) ?></title>
     <!-- Bootstrap -->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

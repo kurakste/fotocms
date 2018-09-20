@@ -1,8 +1,8 @@
 <?php 
     use yii\helpers\Url;
     $count = count($posts);
+    $this->title = ' Блог ';
 ?>
-s
   <!-- Блог три колонки с блогом -->
     <div class="container-fluid">
     <?php for ($i=0; $i<= $count; $i = $i + 3 ): ?>
