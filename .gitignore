@@ -3,6 +3,7 @@
 /yii_test
 /yii_test.bat
 tags
+.env
 
 # phpstorm project files
 .idea
