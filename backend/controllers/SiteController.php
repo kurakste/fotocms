@@ -21,29 +21,31 @@ class SiteController extends Controller
     public function behaviors()
     {
         return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                    'settings' =>['post' , 'get']
-
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['login', 'signup'],
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['index', 'settings', 'logout'],
+                        'roles' => ['@'],
+                    ],
+                    [
+                        //see captcha and error added here, this fixes the issue
+                        'actions' => ['forgot', 'reset-password', 'captcha', 'error'],
+                        'allow' => true,
+                        'roles' => ['?', '@'],
+                    ],
                 ],
             ],
         ];
     }
 
     /**
-     * {@inheritdoc}
-     */
-    /* public function actions() */
-    /* { */
-    /*     return [ */
-    /*         'error' => [ */
-    /*             'class' => 'yii\web\ErrorAction', */
-    /*         ], */
-    /*     ]; */
-    /* } */
-
     /**
      * Displays homepage.
      *
@@ -57,10 +59,8 @@ class SiteController extends Controller
     public function actionSettings()
     {
         $site = \backend\objects\Getsettings::get();
-
-//        var_dump($site);die;
-
         $request = \Yii::$app->request;
+
         if ($request->isPost) {
 
             $site->load($request->post('Photosite'), ''); 
@@ -86,9 +86,10 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
+        $this->layout='loginadminlte';
+        /* if (!Yii::$app->user->isGuest) { */
+        /*     return $this->goHome(); */
+        /* } */
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {

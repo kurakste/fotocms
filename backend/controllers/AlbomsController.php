@@ -7,6 +7,7 @@ use app\models\Alboms;
 use app\models\AlbomsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 
 /**
@@ -14,12 +15,19 @@ use yii\filters\VerbFilter;
  */
 class AlbomsController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['index', 'settings', 'view', 'update', 'create', 'delete', 'logout'],
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -28,7 +36,6 @@ class AlbomsController extends Controller
             ],
         ];
     }
-
     /**
      * Lists all Alboms models.
      * @return mixed
