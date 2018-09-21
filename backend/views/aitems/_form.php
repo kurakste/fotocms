@@ -16,9 +16,24 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'filename')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'short_description')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'short_description')
+            ->widget(CKEditor::className(),[
+                'editorOptions' => [
+                'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+                'inline' => false, //по умолчанию false
+            ],
+        ]);            
+    ?>
 
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'description')
+            ->widget(CKEditor::className(),[
+                'editorOptions' => [
+                'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+                'inline' => false, //по умолчанию false
+            ],
+        ]);            
+    
+        ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

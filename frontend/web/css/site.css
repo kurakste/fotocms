@@ -24,14 +24,12 @@ margin-bottom:20px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.7);
 }
 
-#about {
-}
-
 .contacts {
     margin-left: 10%; 
     margin-right: 10%; 
     margin-bottom: 20%;
 }
+
 /* END Оформление страницы контакты */
 .main-text {
 margin:5%;
@@ -46,6 +44,7 @@ text-align: justify;
     width:90%;
     overflow:hidden;
 }
+
 .image-fluid {
     margin-bottom:5%;
     margin-left:0%;
@@ -59,6 +58,7 @@ text-align: justify;
 .image-fluid img {
     width:100%;
 }
+
 .video  {
     height: 0;
     position: relative;

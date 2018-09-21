@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use mihaildev\ckeditor\CKEditor;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Alboms */
@@ -14,7 +15,23 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'short_description')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'short_description')
+            ->widget(CKEditor::className(),[
+                'editorOptions' => [
+                'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+                'inline' => false, //по умолчанию false
+            ],
+        ]);            
+
+    ?>    
+    <?= $form->field($model, 'description')
+            ->widget(CKEditor::className(),[
+                'editorOptions' => [
+                'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+                'inline' => false, //по умолчанию false
+            ],
+        ]);            
+        ?>
 
     <?= $form->field($model, 'main_image')
 
@@ -32,8 +49,6 @@ use yii\widgets\ActiveForm;
                 'multiple' => true,
             ]);
     ?>
-
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

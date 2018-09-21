@@ -9,9 +9,15 @@ class PostController extends \yii\web\Controller
     {
 
         $id = \Yii::$app->request->get('id');
+        $site = \backend\objects\Getsettings::get();
+        
 
         $post = \app\models\Posts::findOne([$id]);
-        return $this->render('index', ['post' => $post]);
+        return $this->render('index',
+            [
+                'post' => $post,
+                'site' => $site,
+            ]);
     }
 
 }

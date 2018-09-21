@@ -28,7 +28,7 @@ dmstr\web\AdminLteAsset::register($this);
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="<?= Url::to(['carusel/index']) ?>" class="logo">
+    <a href="<?= Url::to(['site/settings']) ?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -53,7 +53,7 @@ dmstr\web\AdminLteAsset::register($this);
                 </a>
              <?php else: ?>
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                  <img src="/img/Anonimous.jpg" class="user-image" alt="User Image">
                   <span class="hidden-xs"><?= Yii::$app->user->identity->username; ?></span>
                 </a>
             <?php endif ?>
@@ -108,7 +108,7 @@ dmstr\web\AdminLteAsset::register($this);
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="/img/Anonymous.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Administrator</p>
