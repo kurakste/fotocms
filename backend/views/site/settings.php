@@ -39,7 +39,7 @@ use mihaildev\ckeditor\CKEditor;
         <?= $form->field($site, 'contacts') 
             ->widget(CKEditor::className(),[
                 'editorOptions' => [
-                'preset' => 'basic', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+                'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
                 'inline' => false, //по умолчанию false
             ],
         ]);            
@@ -47,7 +47,7 @@ use mihaildev\ckeditor\CKEditor;
         <?= $form->field($site, 'copyrights') 
             ->widget(CKEditor::className(),[
                 'editorOptions' => [
-                'preset' => 'basic', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+                'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
                 'inline' => false, //по умолчанию false
             ],
         ]);            
@@ -71,7 +71,7 @@ use mihaildev\ckeditor\CKEditor;
         <?= $form->field($site, 'services_video_article')
             ->widget(CKEditor::className(),[
                 'editorOptions' => [
-                'preset' => 'basic', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+                'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
                 'inline' => false, //по умолчанию false
             ],
         ]);            
