@@ -43,60 +43,13 @@ dmstr\web\AdminLteAsset::register($this);
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <!-- Notifications: style can be found in dropdown.less -->
-          <li class="dropdown notifications-menu">
-          <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-             <?php if(Yii::$app->user->isGuest) : ?>
-                <a href="/site/login" class="dropdown-toggle" data-toggle="dropdown">
-                  <span class="hidden-xs">Login</span>
-                </a>
-             <?php else: ?>
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="/img/Anonimous.jpg" class="user-image" alt="User Image">
-                  <span class="hidden-xs"><?= Yii::$app->user->identity->username; ?></span>
-                </a>
-            <?php endif ?>
-
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <p>
-                  Administrator
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                    <form action="/site/logout" method="post">
-                      <input type='submit' value="Sign out" class="btn btn-default btn-flat">
-                    </form>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
+            <li>
+                <form action="/site/logout" method="post">
+                 <?= Html :: hiddenInput(\Yii :: $app->getRequest()->csrfParam, \Yii :: $app->getRequest()->getCsrfToken(), []); ?>
+                  <input type='submit' value="Sign out" class="btn bg-primary btn-flat">
+                </form>
+            </li>
+            
         </ul>
       </div>
     </nav>
