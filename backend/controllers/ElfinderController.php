@@ -24,8 +24,8 @@ class ElfinderController extends \yii\web\Controller
                             'path' => Yii::getAlias('@webroot') . '/img',
                             'URL' => Yii::getAlias('@web') . '/img',
                             'mimeDetect' => 'internal',
-                            'uploadDeny' => array('all'),
-                            'uploadAllow' => array('image'),
+//                            'uploadDeny' => array('all'),
+                            'uploadAllow' => array('all'),
                             'disabled' => [
                                 'netmount',
                             ],
