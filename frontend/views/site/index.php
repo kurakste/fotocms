@@ -6,9 +6,9 @@
       <?php $i =0; ?>
       <?php foreach ($carusel as $item): ?>
           <li data-target="#myCarousel" data-slide-to="<?= $i ?>" 
-                <? if($i == 0): ?>  
+                <?php if($i == 0): ?>  
                     class="active">
-                <? endif ?>
+                <?php endif ?>
           </li>
         <?php $i++; ?>
         <?php endforeach ?>
