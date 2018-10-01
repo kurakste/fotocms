@@ -32,7 +32,7 @@ class Alboms extends \yii\db\ActiveRecord
         return [
             [['name', 'main_image', 'images'], 'required'],
             [['description'], 'string'],
-            [['name', 'short_description', 'main_image', 'images'], 'string', 'max' => 255],
+            [['name', 'short_description', 'main_image'], 'string', 'max' => 255],
         ];
     }
 
