@@ -5,8 +5,8 @@ $this->title = 'Услуги ';
 
 ?>
  <!-- Main picture -->
-    <div class="image-fluid parallax">
-    <img src="<?= $site->services_main_image ?>" alt="" />
+    <div class="image-fluid" id='service-image' img> <!-- remove paralax style... -->
+        <img src="<?= $site->services_main_image ?>" alt="" />
     </div>
   <!-- End main picture -->
     <div class="container-fluid" id="must-be-white">

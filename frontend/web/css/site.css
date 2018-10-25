@@ -84,17 +84,35 @@ iframe {
 z-index:-1;
 position:fixed;
 }
-#must-be-white {
-    margin-top:50%;
-background:#FFFFFF;
+/* #must-be-white { */
+/*     margin-top:50%; */
+/*     background:#FFFFFF; */
+/* } */
+
+@keyframes shadow {
+   from {margin-top: -1000px;}
+   to {margin-top: 0px;}
 }
 
+@-webkit-keyframes shadow {
+   from {margin-top: -1000px;}
+   to {margin-top: 0px;}
+}
+
+#service-image {
+   /* margin-top: -1000px; */
+   animation: shadow  3s  ease-in-out;
+   -webkit-animation: shadow  3s  ease-in-out;
+   -moz-animation: shadow  3s  ease-in-out;
+   -o-animation-animation: shadow  3s  ease-in-out;
+}
 /*  END Этот блок нужен для эффекта паралакс */
 /* выравнивание аватарок по центру колонки */
 .avatar {
 display:flex;
 justify-content: center;
 }
+
 
 .container-footer {
   bottom: 0;
