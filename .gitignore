@@ -5,6 +5,7 @@
 tags
 .env
 db
+frontend/web/img
 
 # phpstorm project files
 .idea
