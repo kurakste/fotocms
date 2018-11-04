@@ -5,9 +5,10 @@ $this->title = 'Услуги ';
 
 ?>
  <!-- Main picture -->
-    <div class="image-fluid" id='service-image' img> <!-- remove paralax style... -->
+    <div class="image-fluid js-cover" id='service-image' img> <!-- remove paralax style... -->
         <img src="<?= $site->services_main_image ?>" alt="" />
     </div>
+
   <!-- End main picture -->
     <div class="container-fluid" id="must-be-white">
 

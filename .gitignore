@@ -4,6 +4,7 @@
 /yii_test.bat
 tags
 .env
+db
 
 # phpstorm project files
 .idea
