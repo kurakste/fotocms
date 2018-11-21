@@ -8,7 +8,9 @@ $("body").fadeIn(450);
 //    linkLocation = this.href;
 //    $("body").fadeOut(450, redirectPage);
 // });
- 
+
+$('.js-cover').animate({'margin-top': "0px" }, 3000);
+   
 function redirectPage() {
    window.location = linkLocation;
 }   
