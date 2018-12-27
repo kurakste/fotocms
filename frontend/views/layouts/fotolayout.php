@@ -42,15 +42,16 @@ AppAsset::register($this);
           </button>
           <a class="navbar-brand" href="<?= Url::to(['site/index']) ?>"> [Дмитрий Куракин]</a>
         </div>
+            <?php $page = $this->params['page'] ?? null ?>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="<?= Url::to(['site/index']) ?>">Портфолио<span class="sr-only">(current)</span></a></li>
-            <li><a href="<?= Url::to(['site/services']) ?>">Услуги</a></li>
-            <li><a href="<?= Url::to(['site/fotosets']) ?>">Фотосерии</a></li>
-            <li><a href="<?= Url::to(['site/blog']) ?>">Блог</a></li>
-            <li><a href="<?= Url::to(['site/contacts']) ?>">Контакты</a></li>
-            <li><a 
+          <li <?php if ($page == 0) echo "class=\"active\"" ?> ><a href="<?= Url::to(['site/index']) ?>">Портфолио<span class="sr-only">(current)</span></a></li>
+            <li <?php if ($page == 1) echo "class=\"active\"" ?>><a href="<?= Url::to(['site/services']) ?>">Услуги</a></li>
+            <li <?php if ($page == 2) echo "class=\"active\"" ?>><a href="<?= Url::to(['site/fotosets']) ?>">Фотосерии</a></li>
+<!--            <li <?php if ($page == 3) echo "class=\"active\"" ?>><a href="<?= Url::to(['site/blog']) ?>">Блог</a></li> -->
+            <li <?php if ($page == 4) echo "class=\"active\"" ?>><a href="<?= Url::to(['site/contacts']) ?>">Контакты</a></li>
+            <li <?php if ($page == 5) echo "class=\"active\"" ?>><a 
             href="tel: <?= Phone::widget([]); ?>"
                             >
                                 <?= Phone::widget([]); ?>

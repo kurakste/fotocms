@@ -12,6 +12,7 @@
         width: 100%;
         text-align: center;
         padding-top: 30px;
+        background-color: #e9eceb;
     }
     #text {
         width: 93%;

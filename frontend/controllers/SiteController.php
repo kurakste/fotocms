@@ -30,6 +30,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this->view->params['page'] = 0;
         $carusel = \app\models\Carusel::find()->all();
         $feedbacks = \app\models\Feedbacks::find()
             ->orderBy(['id'=>'DESC'])
@@ -43,6 +44,7 @@ class SiteController extends Controller
 
     public function actionServices()
     {
+        $this->view->params['page'] = 1;
         $servecies = \app\models\Servecies::find()->all();
         $feedbacks =\app\models\Feedbacks::find()
             ->orderBy(['id'=>'DESC'])
@@ -60,6 +62,7 @@ class SiteController extends Controller
 
     public function actionFotosets()
     {
+        $this->view->params['page'] = 2;
         $alboms = \app\models\Alboms::find()->all();
 
         return $this->render('fotosets',
@@ -71,6 +74,7 @@ class SiteController extends Controller
 
     public function actionContacts()
     {
+        $this->view->params['page'] = 4;
         $site = \backend\objects\Getsettings::get();
         
         return $this->render('contacts',
@@ -81,6 +85,7 @@ class SiteController extends Controller
 
     public function actionBlog()
     {
+        $this->view->params['page'] = 3;
         $posts = \app\models\Posts::find()->all();
         return $this->render('blog', ['posts' => $posts]);
     }
