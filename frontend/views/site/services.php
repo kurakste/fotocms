@@ -4,12 +4,16 @@ use \frontend\widgets\Phone;
 $this->title = 'Услуги ';
 
 ?>
+<style>
+    body {
+        height:0px;
+    }
+</style>
  <!-- Main picture -->
     <div class="image-fluid js-cover" id='service-image' img> <!-- remove paralax style... -->
         <img src="<?= $site->services_main_image ?>" alt="" />
     </div>
-
-  <!-- End main picture -->
+  <!-- End main picture -
     <div class="container-fluid" id="must-be-white">
 
     <div class="row" id="first-div">
@@ -17,12 +21,11 @@ $this->title = 'Услуги ';
             <hr> 
         </div>
     </div>
-<!-- End Разделитель -->
-<!-- hellow start -->
+End Разделитель -->
+<!-- hellow start -
        <div class="main-text">
-        <?= $site->services_video_article ?>
      </div>   
-<!--end hellow -->
+end hellow -->
     <div class="row">
         <div class="col-md-10 col-md-offset-1 divider">
             <hr> 
@@ -35,33 +38,19 @@ $this->title = 'Услуги ';
       </div>
     </div>
     
-        <div class="main-text">
+    <div class="main-text">
 
-    <?php foreach ($servecies as $service): ?>
-    <h4><?= $service->title ?> </h4>
-        <?= $service->body ?> 
-<br>
-<br>
-    <?php endforeach ?>
-Вне зависимости от выбранного пакета услуг фотографии проходят не только тчательную обработку, но и в обязательном порядке приезжают к вам в приятной упаковке.<br>
-    </div>
-    <div class="image">
-        <img src="<?= $site->services_second_image ?>" alt="" />
+        <?php foreach ($servecies as $service): ?>
+                <h4><?= $service->title ?> </h4>
+                    <?= $service->body ?> 
+            <br>
+            <br>
+        <?php endforeach ?>
+        Вне зависимости от выбранного пакета услуг фотографии проходят не только тчательную обработку, но и в обязательном порядке приезжают к вам в приятной упаковке.<br>
     </div>
 <!--end packet  -->
   
-<div class="row">
-        <div class="col-md-10 col-md-offset-1 divider">
-            <hr> 
-        </div>
-    </div>
 
-    <div class="image">    
-    <?= $site->services_video_article ?>
-    <div class="video">    
-        <iframe src="<?= $site->services_video_link ?>" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    </div>
-    </div>
 <!-- Start link -->
     <div class="row">
         <div class="col-md-10 col-md-offset-1 divider">
